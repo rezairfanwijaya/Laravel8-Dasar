@@ -34,3 +34,8 @@ Route::get('/mahasiswa/reza', function(){
 Route::get('/mahasiswa/{nama}', function($kamu){
     return "Profile Mahasiswa $kamu";
 });
+
+// route parameter lebih dari satu (jenis , merek)
+Route::get('/stok/{jenis}/{merek}',function($jenis, $merk){
+    return "Hasil Stok dari barang dengan jenis $jenis dan merek $merk";
+});
