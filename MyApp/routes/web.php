@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Symfony\Component\VarDumper\VarDumper;
 
 /*
 |--------------------------------------------------------------------------
@@ -152,3 +153,21 @@ Route::fallback(function(){
  Route::get('/laptop/{a}',function($a){ return "Laptop ke-$a saya";});
  Route::get('/laptop/{b}',function($b){ return "Laptop ke-$b kami";});
  Route::get('/laptop/{c}',function($c){ return "Laptop ke-$c kita";});
+
+//  Debugging -> Pencarian error 
+Route::get('/data', function(){
+
+    $data = [
+        "nama" => "reza irfan wijaya",
+        'kelas' => 'MM4',
+        'NIM' => 19102149,
+        'alamat' => [
+            'desa' => 'hanum',
+            'kecamatan' => 'dayeuhluhur',
+            'kebupaten' => 'cilacap'
+    
+        ]
+    ];
+    
+    dd($data);
+});
