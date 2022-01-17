@@ -39,3 +39,9 @@ Route::get('/mahasiswa/{nama}', function($kamu){
 Route::get('/stok/{jenis}/{merek}',function($jenis, $merk){
     return "Hasil Stok dari barang dengan jenis $jenis dan merek $merk";
 });
+
+// route optional parameter
+// jika salah satu parameter tidak diisi maka akan digantikan dengan nilai default yang sudah didefinisikan pada parameter function yaitu $a untuk jenis dan $b untuk merk
+Route::get('/stok/{jenis?}/{merk?}', function($a = "smartphone", $b="samsung"){
+    return "Cek sisa stok untuk $a dengan merk $b";
+});
