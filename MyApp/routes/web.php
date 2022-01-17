@@ -39,7 +39,7 @@ Route::get('/belajar', function(){
 
 
 Route::get('/mahasiswa', function(){
-    return view('mahasiswa',["title" => "Mahasiswa"]);
+    return view('universitas.mahasiswa',["title" => "Mahasiswa"]);
 });
 
 
