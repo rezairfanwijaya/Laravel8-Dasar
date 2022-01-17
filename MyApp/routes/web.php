@@ -135,3 +135,20 @@ Route::fallback(function(){
     echo '<h4 style="text-align:center">/hello</h4>';
     echo '<h4 style="text-align:center">/belajar</h4>';
 });
+
+
+
+// route priority
+/***
+ * Route ini akan memilih prioritas dari route lain dari route yang memiliki nama yang sama
+ * contoh : 
+ *  Route::get('/laptop/1', function(){ return "Laptop ke-1 saya";});
+ *  Route::get('/laptop/1', function(){ return "Laptop ke-1 kami";});
+ *  Route::get('/laptop/1', function(){ return "Laptop ke-1 kita";});
+ * 
+ * jika tidak mengunakan route priority maka yang akan terpanggil adalah route terakhir yaitu route yang memiliki nilai return "Laptop ke-1 kita".
+ */
+
+ Route::get('/laptop/{a}',function($a){ return "Laptop ke-$a saya";});
+ Route::get('/laptop/{b}',function($b){ return "Laptop ke-$b kami";});
+ Route::get('/laptop/{c}',function($c){ return "Laptop ke-$c kita";});
