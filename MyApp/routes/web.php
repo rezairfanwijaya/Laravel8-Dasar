@@ -45,3 +45,11 @@ Route::get('/stok/{jenis}/{merek}',function($jenis, $merk){
 Route::get('/stok/{jenis?}/{merk?}', function($a = "smartphone", $b="samsung"){
     return "Cek sisa stok untuk $a dengan merk $b";
 });
+
+// route regular expression
+/**
+ * Route ini akan meminta parameter dengan syarat tertentu, bisa berupa angka saja atau pun kombinasi antar angka dengan huruf. Saya ambil contoh untuk parameter id, saya beri kondisi bahwa id yang dimasukan harus angka saja dari angka 1-9 dengan jumlah digit bebas.TIDAK ADA KARAKTER LAIN SELAIN ANGKA,JIKA ADA MAKA HALAMAN AKAN NOT FOUND
+ */
+Route::get('/profile/{id}', function($id){
+    return "Tampilkan user dengan id = $id";
+})->where('id', '[0-9]+');
