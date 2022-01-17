@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\VarDumper\VarDumper;
 
+use function Ramsey\Uuid\v1;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,8 +38,8 @@ Route::get('/belajar', function(){
 
 
 
-Route::get('/mahasiswa/reza', function(){
-    echo '<h1 style="text-align:center"> Reza adalah seorang mahasiswa </h1>';
+Route::get('/mahasiswa', function(){
+    return view('mahasiswa',["title" => "Mahasiswa"]);
 });
 
 
