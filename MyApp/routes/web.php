@@ -17,3 +17,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/hello', function(){
+    return "Hello Reza Irfan. Selamat Belajar";
+});
+
+Route::get('/belajar', function(){
+    echo '<h1 style="text-align:center; margin-top:30px"> Saya Reza Irfan </h1>';
+    echo '<h4 style="text-align:center"> Saya Sedang Belajar Laravel </h4>';
+});
+
+Route::get('/mahasiswa/reza', function(){
+    echo '<h1 style="text-align:center"> Reza adalah seorang mahasiswa </h1>';
+});
+
+// route parameter (nama)
+Route::get('/mahasiswa/{nama}', function($kamu){
+    return "Profile Mahasiswa $kamu";
+});
