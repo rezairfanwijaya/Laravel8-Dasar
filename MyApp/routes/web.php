@@ -58,3 +58,9 @@ Route::get('/profile/{id}', function($id){
 Route::get('/detail/{id}', function($undian){
     return "nomor undian yang menang adalah $undian";
 })->where('undian', '[A-Z]{2}[0-9]+');
+
+// route redirect
+// route yang mengalihkan ke route lain
+Route::get('/kontak', function(){
+    return "hubungi kami di nomor 88890";
+});
