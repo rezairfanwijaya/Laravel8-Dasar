@@ -39,7 +39,28 @@ Route::get('/belajar', function(){
 
 
 Route::get('/mahasiswa', function(){
-    return view('universitas.mahasiswa',["title" => "Mahasiswa"]);
+    // return view('universitas.mahasiswa',["title" => "Mahasiswa"]);
+    $all = [
+        [
+            "nama" => "Reza Irfan Wijaya",
+            "nim" => 19102149,
+            "jurusan" => "Teknik Informatika"
+
+        ],
+        [
+            "nama" => "Reza Irfan ",
+            "nim" => 19102148,
+            "jurusan" => "Teknik Industri"
+
+        ],
+        [
+            "nama" => "Reza",
+            "nim" => 19102147,
+            "jurusan" => "Desain Komunikasi Visual"
+
+        ]
+    ];
+    return view('universitas.mahasiswa')->with('title', "Mahasiswa")->with('mahasiswa', $all);
 });
 
 
