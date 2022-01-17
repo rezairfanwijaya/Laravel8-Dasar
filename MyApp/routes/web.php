@@ -123,3 +123,15 @@ Route::prefix('/admin')->group(function(){
     });
 
 });
+
+
+
+
+// route fallback
+// route yang akan dipanggil jika user memasukan route yang tidak terdaftar
+Route::fallback(function(){
+    echo '<h2 style="text-align:center; margin-top:45px">Alamat tidak diketahui</h2>';
+    echo '<h3 style="text-align:center">Mungkin maksud anda ?</h3>';
+    echo '<h4 style="text-align:center">/hello</h4>';
+    echo '<h4 style="text-align:center">/belajar</h4>';
+});
