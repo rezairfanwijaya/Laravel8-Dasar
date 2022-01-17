@@ -53,3 +53,8 @@ Route::get('/stok/{jenis?}/{merk?}', function($a = "smartphone", $b="samsung"){
 Route::get('/profile/{id}', function($id){
     return "Tampilkan user dengan id = $id";
 })->where('id', '[0-9]+');
+
+// masih regular expression, pada contoh kali ini saya akan membuat kondisi parameter dengan kombinasi 2huruf besar lalu dilanjut angka
+Route::get('/detail/{id}', function($undian){
+    return "nomor undian yang menang adalah $undian";
+})->where('undian', '[A-Z]{2}[0-9]+');
