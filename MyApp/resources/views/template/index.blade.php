@@ -17,6 +17,32 @@
 </head>
 
 <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-5">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Kampus Belajar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link {{ ($title === 'Kampus | Belajar') ? 'active' : '' }}" aria-current="page" href="/kampus">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ ($title === 'Mahasiswa') ? 'active' : '' }}" href="/mahasiswa">Mahasiswa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ ($title === 'Dosen') ? 'active' : '' }}" href="#">Dosen</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ ($title === 'Tentang') ? 'active' : '' }}" href="#">Tentang</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div class="container">
         @yield('konten')
     </div>

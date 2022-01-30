@@ -181,6 +181,9 @@ Route::get('/mahasiswa/{nama}/{usia}/{alamat}', function($a, $b, $c){
     // Pengaplikasian 
 //  ===================================================================================
 //  ===================================================================================
+Route::get('/kampus', function(){
+    return view('kampus')->with('title', 'Kampus | Belajar');
+});
 Route::get('/mahasiswa', function(){
     
     $all = [
