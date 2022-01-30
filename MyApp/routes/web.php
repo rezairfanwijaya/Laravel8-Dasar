@@ -194,3 +194,13 @@ Route::get('/data', function(){
     
     dd($data);
 });
+
+
+// function compact
+Route::get('/mahasiswa/{nama}/{usia}/{alamat}', function($a, $b, $c){
+    return view('compact',[
+        'nama' => $a,
+        'usia' => $b,
+        'alamat' => $c,
+    ]);
+});
