@@ -37,36 +37,6 @@ Route::get('/belajar', function(){
 
 
 
-
-Route::get('/mahasiswa', function(){
-    // return view('universitas.mahasiswa',["title" => "Mahasiswa"]);
-    $all = [
-        [
-            "nama" => "Reza Irfan Wijaya",
-            "nim" => 19102149,
-            "jurusan" => "Teknik Informatika"
-
-        ],
-        [
-            "nama" => "Reza Irfan ",
-            "nim" => 19102148,
-            "jurusan" => "Teknik Industri"
-
-        ],
-        [
-            "nama" => "Reza",
-            "nim" => 19102147,
-            "jurusan" => "Desain Komunikasi Visual"
-
-        ]
-    ];
-    return view('universitas.mahasiswa')->with('title', "Mahasiswa")->with('mahasiswa', $all);
-});
-
-
-
-
-
 // route parameter (nama)
 Route::get('/mahasiswa/{nama}', function($kamu){
     return "Profile Mahasiswa $kamu";
@@ -204,3 +174,36 @@ Route::get('/mahasiswa/{nama}/{usia}/{alamat}', function($a, $b, $c){
         'alamat' => $c,
     ]);
 });
+
+
+//  ===================================================================================
+//  ===================================================================================
+    // Pengaplikasian 
+//  ===================================================================================
+//  ===================================================================================
+Route::get('/mahasiswa', function(){
+    
+    $all = [
+        [
+            "nama" => "Reza Irfan Wijaya",
+            "nim" => 19102149,
+            "jurusan" => "Teknik Informatika"
+
+        ],
+        [
+            "nama" => "Reza Irfan ",
+            "nim" => 19102148,
+            "jurusan" => "Teknik Industri"
+
+        ],
+        [
+            "nama" => "Reza",
+            "nim" => 19102143,
+            "jurusan" => "Desain Komunikasi Visual"
+
+        ]
+    ];
+    return view('universitas.mahasiswa')->with('title', "Mahasiswa")->with('mahasiswa', $all);
+});
+
+
