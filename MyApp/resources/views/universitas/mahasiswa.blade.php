@@ -1,7 +1,7 @@
 @extends('template.index')
 
 @section('konten')
-    <h3 class="mt-5 text-center">Selamat Datang Admin</h3>
+    
     <h5 class="my-5">Daftar Mahasiswa</h5>
 
     <table class="table table-stiped text-center my-3">
@@ -12,20 +12,22 @@
             <th>Jurusan</th>
             <th>Status</th>
         </tr>
-        @foreach ($mahasiswa as $mhs)
-            <tr>
-                <td>{{ $loop->iteration }}</td>
-                <td>{{ $mhs['nama'] }}</td>
-                <td>{{ $mhs['nim'] }}</td>
-                <td>{{ $mhs['jurusan'] }}</td>
-
-                @if ($mhs['nim']%2==0)
-                    <td class="bg-success" width="30px"></td>
-                @else
-                    <td class="bg-danger" width="30px"></td>
-                @endif  
-                
-            </tr>
-        @endforeach
+       @forelse ($mahasiswa as $mhs)
+           <tr>
+               <td>{{ $loop->iteration }}</td>
+               <td>{{ $mhs['nama'] }}</td>
+               <td>{{ $mhs['nim'] }}</td>
+               <td>{{ $mhs['jurusan'] }}</td>
+               <td>
+                   @if ($mhs['nim']%2==0)
+                       <div class="bg-danger p-3 mx-auto" style="width: 20px"></div>
+                    @else
+                    <div class="bg-success p-3 mx-auto" style="width: 20px"></div>
+                   @endif
+               </td>
+           </tr>
+       @empty
+           <div class="bg-danger p-3 text-white text-center">Data Kosong</div>
+       @endforelse
     </table>
 @endsection

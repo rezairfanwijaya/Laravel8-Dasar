@@ -184,6 +184,8 @@ Route::get('/mahasiswa/{nama}/{usia}/{alamat}', function($a, $b, $c){
 Route::get('/kampus', function(){
     return view('kampus')->with('title', 'Kampus | Belajar');
 });
+
+// mahasiswa
 Route::get('/mahasiswa', function(){
     
     $all = [
@@ -209,4 +211,40 @@ Route::get('/mahasiswa', function(){
     return view('universitas.mahasiswa')->with('title', "Mahasiswa")->with('mahasiswa', $all);
 });
 
+// dosen
+Route::get('/dosen', function(){
+    $all = [
+        [
+            'nama' => 'Abdul',
+            'nip' => '193029308',
+            'keahlian' =>'Infomratika'
+        ],
+        [
+            'nama' => 'Sofyan',
+            'nip' => '1369303',
+            'keahlian' =>'IOT'
+        ],
+        [
+            'nama' => 'Bellatrix',
+            'nip' => '190980805',
+            'keahlian' =>'Fisika'
+        ],
+        [
+            'nama' => 'Irfan',
+            'nip' => '1990845608',
+            'keahlian' =>'Kimia'
+        ],
+        [
+            'nama' => 'Kusuma',
+            'nip' => '193878967509',
+            'keahlian' =>'Hukum'
+        ],
+    ];
+
+    return view('universitas.dosen')->with('title', 'Dosen')->with('dosen', $all);
+});
+// tentang
+Route::get('/tentang', function(){
+    return view('universitas.tentang')->with('title', 'Tentang');
+});
 

@@ -13,6 +13,10 @@
     {{-- CSS External --}}
     <link rel="stylesheet" href="/css/style.css">
 
+    {{-- font awesome --}}
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
     <title>{{ $title }}</title>
 </head>
 
@@ -20,7 +24,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-5">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Kampus Belajar</a>
+            <a class="navbar-brand" href="/kampus">Kampus Belajar</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -28,16 +32,18 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link {{ ($title === 'Kampus | Belajar') ? 'active' : '' }}" aria-current="page" href="/kampus">Beranda</a>
+                        <a class="nav-link {{ $title === 'Kampus | Belajar' ? 'active' : '' }}" aria-current="page"
+                            href="/kampus">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ ($title === 'Mahasiswa') ? 'active' : '' }}" href="/mahasiswa">Mahasiswa</a>
+                        <a class="nav-link {{ $title === 'Mahasiswa' ? 'active' : '' }}"
+                            href="/mahasiswa">Mahasiswa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ ($title === 'Dosen') ? 'active' : '' }}" href="#">Dosen</a>
+                        <a class="nav-link {{ $title === 'Dosen' ? 'active' : '' }}" href="/dosen">Dosen</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ ($title === 'Tentang') ? 'active' : '' }}" href="#">Tentang</a>
+                        <a class="nav-link {{ $title === 'Tentang' ? 'active' : '' }}" href="/tentang">Tentang</a>
                     </li>
                 </ul>
             </div>
@@ -45,6 +51,12 @@
     </nav>
     <div class="container">
         @yield('konten')
+    </div>
+
+    <div class="footer bg-dark text-white text-center fixed-bottom p-2">
+        <footer>
+            Copyright | {{ date('Y') }}
+        </footer>
     </div>
 
 
