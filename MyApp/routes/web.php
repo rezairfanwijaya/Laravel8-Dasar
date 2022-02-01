@@ -252,8 +252,16 @@ Route::get('/dosen', function(){
 
     return view('universitas.dosen')->with('title', 'Dosen')->with('dosen', $all);
 })->name('dosen');
+
+
 // tentang
 Route::get('/tentang', function(){
     return view('universitas.tentang')->with('title', 'Tentang');
 })->name('tentang');
+
+
+// laravel mix
+Route::get('/laravel-mix', function(){
+return view('learning.laramix');
+});
 

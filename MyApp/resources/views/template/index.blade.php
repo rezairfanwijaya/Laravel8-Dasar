@@ -53,6 +53,10 @@
                     <li class="nav-item">
                         <a class="nav-link {{ $title === 'Admin | Dashboard' ? 'active' : '' }}" href="{{ route('admin', ['nama'=>'Kampus Belajar']) }}">Admin</a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('laravel-mix') }}">LaraMix</a>
+                    </li>
                 </ul>
             </div>
         </div>
