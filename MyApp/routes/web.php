@@ -184,13 +184,13 @@ Route::get('/mahasiswa/{nama}/{usia}/{alamat}', function($a, $b, $c){
 
 // admin
 Route::get('/administrator', function(){
-    return view('universitas.admin')->with('title', 'Admin | Dashboard');
+    return view('universitas.admin')->with('title', 'Admin | Dashboards');
 })->name('admin');
 
 
 Route::get('/kampus', function(){
     return view('kampus')->with('title', 'Kampus | Belajar');
-});
+})->name('kampus');
 
 // mahasiswa
 Route::get('/mahasiswa', function(){
@@ -216,7 +216,7 @@ Route::get('/mahasiswa', function(){
         ]
     ];
     return view('universitas.mahasiswa')->with('title', "Mahasiswa")->with('mahasiswa', $all);
-});
+})->name('mahasiswa');
 
 // dosen
 Route::get('/dosen', function(){
@@ -249,7 +249,7 @@ Route::get('/dosen', function(){
     ];
 
     return view('universitas.dosen')->with('title', 'Dosen')->with('dosen', $all);
-});
+})->name('dosen');
 // tentang
 Route::get('/tentang', function(){
     return view('universitas.tentang')->with('title', 'Tentang');

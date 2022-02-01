@@ -34,16 +34,16 @@
 
                     <li class="nav-item">
                         <a class="nav-link {{ $title === 'Kampus | Belajar' ? 'active' : '' }}" aria-current="page"
-                            href="/kampus">Beranda</a>
+                            href="{{ route('kampus') }}">Beranda</a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link {{ $title === 'Mahasiswa' ? 'active' : '' }}"
-                            href="/mahasiswa">Mahasiswa</a>
+                            href="{{ route('mahasiswa') }}">Mahasiswa</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link {{ $title === 'Dosen' ? 'active' : '' }}" href="/dosen">Dosen</a>
+                        <a class="nav-link {{ $title === 'Dosen' ? 'active' : '' }}" href="{{ route('dosen') }}">Dosen</a>
                     </li>
 
                     <li class="nav-item">
