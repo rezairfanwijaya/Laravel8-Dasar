@@ -184,8 +184,8 @@ Route::get('/mahasiswa/{nama}/{usia}/{alamat}', function($a, $b, $c){
 
 // admin
 Route::get('/administrator', function(){
-    return view('universitas.admin');
-});
+    return view('universitas.admin')->with('title', 'Admin | Dashboard');
+})->name('admin');
 
 
 Route::get('/kampus', function(){
@@ -253,5 +253,5 @@ Route::get('/dosen', function(){
 // tentang
 Route::get('/tentang', function(){
     return view('universitas.tentang')->with('title', 'Tentang');
-});
+})->name('tentang');
 

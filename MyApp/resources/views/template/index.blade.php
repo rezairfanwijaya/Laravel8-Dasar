@@ -31,19 +31,27 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
+
                     <li class="nav-item">
                         <a class="nav-link {{ $title === 'Kampus | Belajar' ? 'active' : '' }}" aria-current="page"
                             href="/kampus">Beranda</a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link {{ $title === 'Mahasiswa' ? 'active' : '' }}"
                             href="/mahasiswa">Mahasiswa</a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link {{ $title === 'Dosen' ? 'active' : '' }}" href="/dosen">Dosen</a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link {{ $title === 'Tentang' ? 'active' : '' }}" href="/tentang">Tentang</a>
+                        <a class="nav-link {{ $title === 'Tentang' ? 'active' : '' }}" href="{{ route('tentang') }}">Tentang</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {{ $title === 'Admin | Dashboard' ? 'active' : '' }}" href="{{ route('admin') }}">Admin</a>
                     </li>
                 </ul>
             </div>
