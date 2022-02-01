@@ -2,7 +2,7 @@
 
 @section('konten')
         <div class="main bg-white p-4 mt-5 shadow-sm">
-            <h3 class="text-center mb-5">Halaman Admin</h3>
+            <h3 class="text-center mb-5">Halaman Admin {{ $nama }}</h3>
 
             @component('template.alert')
             @slot('class')

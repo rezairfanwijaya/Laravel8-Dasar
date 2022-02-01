@@ -183,8 +183,8 @@ Route::get('/mahasiswa/{nama}/{usia}/{alamat}', function($a, $b, $c){
 //  ===================================================================================
 
 // admin
-Route::get('/administrator', function(){
-    return view('universitas.admin')->with('title', 'Admin | Dashboards');
+Route::get('/administrator/{nama}', function($nama){
+    return view('universitas.admin')->with('title', 'Admin | Dashboards')->with('nama', $nama);
 })->name('admin');
 
 
