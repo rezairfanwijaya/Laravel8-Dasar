@@ -11,7 +11,7 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     {{-- CSS External --}}
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
 
     {{-- font awesome --}}
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
@@ -47,7 +47,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link {{ $title === 'Tentang' ? 'active' : '' }}" href="{{ route('tentang') }}">Tentang</a>
+                        <a class="nav-link {{ $title === 'Tentang' ? 'active' : '' }}" href="{{ url('/tentang') }}">Tentang</a>
                     </li>
 
                     <li class="nav-item">
