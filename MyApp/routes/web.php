@@ -181,6 +181,13 @@ Route::get('/mahasiswa/{nama}/{usia}/{alamat}', function($a, $b, $c){
     // Pengaplikasian 
 //  ===================================================================================
 //  ===================================================================================
+
+// admin
+Route::get('/administrator', function(){
+    return view('universitas.admin');
+});
+
+
 Route::get('/kampus', function(){
     return view('kampus')->with('title', 'Kampus | Belajar');
 });
