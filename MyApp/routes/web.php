@@ -1,9 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use Symfony\Component\VarDumper\VarDumper;
-
 use function Ramsey\Uuid\v1;
+use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\HomeConstroller;
+use Symfony\Component\VarDumper\VarDumper;
 
 /*
 |--------------------------------------------------------------------------
@@ -184,84 +185,101 @@ Route::redirect('/', '/kampus');
 //  ===================================================================================
 //  ===================================================================================
 
-// admin
-Route::get('/administrator/{nama}', function($nama){
-    return view('universitas.admin')->with('title', 'Admin | Dashboards')->with('nama', $nama);
-})->name('admin');
+// // admin
+// Route::get('/administrator/{nama}', function($nama){
+//     return view('universitas.admin')->with('title', 'Admin | Dashboards')->with('nama', $nama);
+// })->name('admin');
+// diubah menggunakan controller
+Route::get('/administrator/{nama?}', [HomeConstroller::class, 'admin'])->name('admin');
 
 
-Route::get('/kampus', function(){
-    return view('kampus')->with('title', 'Kampus | Belajar');
-})->name('kampus');
+// Route::get('/kampus', function(){
+//     return view('kampus')->with('title', 'Kampus | Belajar');
+// })->name('kampus');
+// diubah menggunakan controller
+Route::get('/kampus', [HomeConstroller::class, 'index'])->name('kampus');
+
 
 // mahasiswa
-Route::get('/mahasiswa', function(){
+// Route::get('/mahasiswa', function(){
 
-    $all = [
-        [
-            "nama" => "Reza Irfan Wijaya",
-            "nim" => 19102149,
-            "jurusan" => "Teknik Informatika"
+//     $all = [
+//         [
+//             "nama" => "Reza Irfan Wijaya",
+//             "nim" => 19102149,
+//             "jurusan" => "Teknik Informatika"
 
-        ],
-        [
-            "nama" => "Reza Irfan ",
-            "nim" => 19102148,
-            "jurusan" => "Teknik Industri"
+//         ],
+//         [
+//             "nama" => "Reza Irfan ",
+//             "nim" => 19102148,
+//             "jurusan" => "Teknik Industri"
 
-        ],
-        [
-            "nama" => "Reza",
-            "nim" => 19102143,
-            "jurusan" => "Desain Komunikasi Visual"
+//         ],
+//         [
+//             "nama" => "Reza",
+//             "nim" => 19102143,
+//             "jurusan" => "Desain Komunikasi Visual"
 
-        ]
-    ];
-    return view('universitas.mahasiswa')->with('title', "Mahasiswa")->with('mahasiswa', $all);
-})->name('mahasiswa');
+//         ]
+//     ];
+//     return view('universitas.mahasiswa')->with('title', "Mahasiswa")->with('mahasiswa', $all);
+// })->name('mahasiswa');
+// diubah menggunakan controller
+Route::get('/mahasiswa', [HomeConstroller::class, 'mahasiswa'])->name('mahasiswa');
 
 // dosen
-Route::get('/dosen', function(){
-    $all = [
-        [
-            'nama' => 'Abdul',
-            'nip' => '193029308',
-            'keahlian' =>'Infomratika'
-        ],
-        [
-            'nama' => 'Sofyan',
-            'nip' => '1369303',
-            'keahlian' =>'IOT'
-        ],
-        [
-            'nama' => 'Bellatrix',
-            'nip' => '190980805',
-            'keahlian' =>'Fisika'
-        ],
-        [
-            'nama' => 'Irfan',
-            'nip' => '1990845608',
-            'keahlian' =>'Kimia'
-        ],
-        [
-            'nama' => 'Kusuma',
-            'nip' => '193878967509',
-            'keahlian' =>'Hukum'
-        ],
-    ];
+// Route::get('/dosen', function(){
+//     $all = [
+//         [
+//             'nama' => 'Abdul',
+//             'nip' => '193029308',
+//             'keahlian' =>'Infomratika'
+//         ],
+//         [
+//             'nama' => 'Sofyan',
+//             'nip' => '1369303',
+//             'keahlian' =>'IOT'
+//         ],
+//         [
+//             'nama' => 'Bellatrix',
+//             'nip' => '190980805',
+//             'keahlian' =>'Fisika'
+//         ],
+//         [
+//             'nama' => 'Irfan',
+//             'nip' => '1990845608',
+//             'keahlian' =>'Kimia'
+//         ],
+//         [
+//             'nama' => 'Kusuma',
+//             'nip' => '193878967509',
+//             'keahlian' =>'Hukum'
+//         ],
+//     ];
 
-    return view('universitas.dosen')->with('title', 'Dosen')->with('dosen', $all);
-})->name('dosen');
+//     return view('universitas.dosen')->with('title', 'Dosen')->with('dosen', $all);
+// })->name('dosen');
+// diubah menggunakan controller
+Route::get('/dosen', [HomeConstroller::class, 'dosen'])->name('dosen');
 
 
 // tentang
-Route::get('/tentang', function(){
-    return view('universitas.tentang')->with('title', 'Tentang');
-})->name('tentang');
+// Route::get('/tentang', function(){
+//     return view('universitas.tentang')->with('title', 'Tentang');
+// })->name('tentang');
+// diubah menggunakan controller
+Route::get('/tentang', [HomeConstroller::class, 'tentang'])->name('tentang');
 
 
 // laravel mix
-Route::get('/laravel-mix', function(){
-return view('learning.laramix')->with('title', 'Laravel Mix');
-});
+// Route::get('/laravel-mix', function(){
+// return view('learning.laramix')->with('title', 'Laravel Mix');
+// });
+// diubah menggunakan controller
+Route::get('/laravel-mix', [HomeConstroller::class, 'laravelMix'])->name('laravel.mix');
+
+
+// laravel Ui
+Route::get('/laravel-ui', [HomeConstroller::class, 'laravelUi'])->name('laravel.ui');
 

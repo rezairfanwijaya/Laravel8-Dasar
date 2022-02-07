@@ -48,7 +48,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link {{ $title === 'Tentang' ? 'active' : '' }}" href="{{ url('/tentang') }}">Tentang</a>
+                        <a class="nav-link {{ $title === 'Tentang' ? 'active' : '' }}" href="{{ route('tentang') }}">Tentang</a>
                     </li>
 
                     <li class="nav-item">
@@ -56,11 +56,11 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link {{ $title === 'Laravel Mix' ? 'active' : '' }}" href="{{ url('laravel-mix') }}">Laravel Mix</a>
+                        <a class="nav-link {{ $title === 'Laravel Mix' ? 'active' : '' }}" href="{{ route('laravel.mix') }}">Laravel Mix</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('laravel-mix') }}">Laravel UI</a>
+                        <a class="nav-link {{ $title === 'Laravel UI' ? 'active' : '' }}" href="{{ route('laravel.ui') }}">Laravel UI</a>
                     </li>
                 </ul>
             </div>
