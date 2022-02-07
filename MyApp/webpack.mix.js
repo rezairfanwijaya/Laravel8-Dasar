@@ -11,6 +11,4 @@ mix.styles([
     'resources/css/my-style.css',
 ], 'public/css/hasil-mix.css')
 
-mix.styles([
-    'resources/sass/my-sass.css'
-], 'public/css/sass.css')
+mix.sass('resources/sass/my-sass.scss', 'public/sass/sass.css')

@@ -11,7 +11,7 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <link rel="stylesheet" href="{{ asset('css/hasil-mix.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/sass.css') }}">
+    <link rel="stylesheet" href="{{ asset('sass/sass.css') }}">
     <title>LaraMix</title>
 </head>
 
