@@ -7,3 +7,5 @@ window.addEventListener('click', function() {
 window.addEventListener('click', function() {
     console.info('saya juga diklik')
 })
+
+window.onload
