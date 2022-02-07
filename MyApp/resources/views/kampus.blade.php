@@ -1,5 +1,6 @@
 @extends('template.index')
 @section('konten')
+
     <div class="main mt-5">
         <div class="row">
 
@@ -28,5 +29,12 @@
                 </a>
             </div>
         </div>
+
+        <h5 class="mt-5">Ini adalah facade snake</h5>
+        <p>{{ $snake }}</p>
+
+        <h5 class="mt-3">Ini adalah facade kebab</h5>
+        <p>{{ $kebab }}</p>
+        
     </div>
 @endsection

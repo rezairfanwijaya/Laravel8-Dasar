@@ -3,12 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+// facade
+use Illuminate\Support\Str;
 
 class HomeConstroller extends Controller
 {
     // beranda
     public function index(){
-        return view('kampus')->with('title', 'Kampus | Belajar');
+        // facade
+        $snake = Str::snake('HalloSayaReza');
+        $kebab = Str::kebab('HalloSayaReza');
+        return view('kampus')
+        ->with('title', 'Kampus | Belajar')
+        ->with('snake', $snake)
+        ->with('kebab', $kebab)
+        ;
+        
+        
     }
 
 
@@ -94,4 +105,5 @@ class HomeConstroller extends Controller
         return view('learning.laravelui')
         ->with('title', 'Laravel UI');
     }
+
 }
