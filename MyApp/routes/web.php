@@ -262,6 +262,6 @@ Route::get('/tentang', function(){
 
 // laravel mix
 Route::get('/laravel-mix', function(){
-return view('learning.laramix');
+return view('learning.laramix')->with('title', 'Laravel Mix');
 });
 

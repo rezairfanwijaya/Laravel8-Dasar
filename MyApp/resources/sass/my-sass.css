@@ -12,5 +12,7 @@
 .konten .card:hover {
   -webkit-box-shadow: 2px 3px 15px rgba(0, 0, 0, 0.3);
           box-shadow: 2px 3px 15px rgba(0, 0, 0, 0.3);
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
 }
 /*# sourceMappingURL=my-sass.css.map */

@@ -12,6 +12,7 @@
 
     {{-- CSS External --}}
     <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
+    
 
     {{-- font awesome --}}
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
@@ -55,7 +56,11 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('laravel-mix') }}">LaraMix</a>
+                        <a class="nav-link {{ $title === 'Laravel Mix' ? 'active' : '' }}" href="{{ url('laravel-mix') }}">Laravel Mix</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('laravel-mix') }}">Laravel UI</a>
                     </li>
                 </ul>
             </div>
