@@ -10,8 +10,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="{{ asset('css/hasil-mix.css') }}">
-    <link rel="stylesheet" href="{{ asset('sass/sass.css') }}">
+    <link rel="stylesheet" href="{{ mix('css/hasil-mix.css') }}">
+    <link rel="stylesheet" href="{{ mix('sass/sass.css') }}">
     <title>LaraMix</title>
 </head>
 
@@ -22,7 +22,7 @@
 
     <div class="konten container mt-5">
         <div class="row">
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-6 col-lg-4">
                 <div class="card" style="width: 18rem;">
                     <img src="https://images.unsplash.com/photo-1566837945700-30057527ade0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" class="card-img-top" alt="...">
                     <div class="card-body">

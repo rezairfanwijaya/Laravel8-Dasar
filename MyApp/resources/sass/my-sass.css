@@ -4,6 +4,7 @@
 
 .konten .card {
   border: 0;
+  margin: 15px 0;
   -webkit-box-shadow: 2px 3px 15px rgba(0, 0, 0, 0.1);
           box-shadow: 2px 3px 15px rgba(0, 0, 0, 0.1);
 }

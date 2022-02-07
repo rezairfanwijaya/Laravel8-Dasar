@@ -1,1 +1,11 @@
-.konten{padding:40px}.konten .card{border:0;box-shadow:2px 3px 15px rgba(0,0,0,.1)}.konten .card:hover{box-shadow:2px 3px 15px rgba(0,0,0,.3)}
+.konten {
+  padding: 40px;
+}
+.konten .card {
+  border: 0;
+  margin: 15px 0;
+  box-shadow: 2px 3px 15px rgba(0, 0, 0, 0.1);
+}
+.konten .card:hover {
+  box-shadow: 2px 3px 15px rgba(0, 0, 0, 0.3);
+}
