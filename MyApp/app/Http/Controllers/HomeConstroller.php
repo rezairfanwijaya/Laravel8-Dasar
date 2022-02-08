@@ -115,9 +115,12 @@ class HomeConstroller extends Controller
 
     // Collection
     public function collection(){
+
         // data collection dengan output array numerik
         $nama = collect(['Reza', 'Irfan', 'Wijaya', 'Abdas', 'Ipin', 
         'Ipang', 'Tupong']);
+
+        $angka = collect([1,354,6,324,89,3131,6,3,90,2]);
 
         // data collection dengan output object (JSON)
         $kabupaten = collect([
@@ -125,12 +128,49 @@ class HomeConstroller extends Controller
             'jawa barat'=>'Banjar Patroman',
             'jawa timur'=>'Malang'
         ]);
+
+        // method collection
+        $minNama = $nama->min();
+        $maxNama = $nama->max();
+        $ranNama = $nama->random();
+        // menambah elemnt ke collection
+        $concNama = $nama->concat(['ipangipin', 'ede']);
+        $firstNama = $nama->first();
+        $lastNama = $nama->last();
+        
+
+        $minAngka = $angka->min();
+        $maxAngka = $angka->max();
+        $sumAngka = $angka->sum();
+        $avgAngka = $angka->avg();
+        $medAngka = $angka->median();
+        $ranAngka = $angka->random();
+        // menambah elemnt ke collect
+        $concAngka = $angka->concat([76847584,847958]);
+        $firstAngka = $angka->first();
+        $lastAngka = $angka->last();
         
 
         return view('learning.collection')
         ->with('title', 'Collection')
         ->with('collectNUM', $nama)
+        ->with('angka', $angka)
         ->with('collectJSON', $kabupaten)
+        ->with('minNama', $minNama)
+        ->with('maxNama', $maxNama)
+        ->with('ranNama', $ranNama)
+        ->with('concNama', $concNama)
+        ->with('firstNama', $firstNama)
+        ->with('lastNama', $lastNama)
+        ->with('minAngka', $minAngka)
+        ->with('maxAngka', $maxAngka)
+        ->with('sumAngka', $sumAngka)
+        ->with('avgAngka', $avgAngka)
+        ->with('medAngka', $medAngka)
+        ->with('ranAngka', $ranAngka)
+        ->with('concAngka', $concAngka)
+        ->with('firstAngka', $firstAngka)
+        ->with('lastAngka', $lastAngka)
         ;
     }
 
