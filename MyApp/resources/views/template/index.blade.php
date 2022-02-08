@@ -62,6 +62,10 @@
                     <li class="nav-item">
                         <a class="nav-link {{ $title === 'Laravel UI' ? 'active' : '' }}" href="{{ route('laravel.ui') }}">Laravel UI</a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {{ $title === 'Collection' ? 'active' : '' }}" href="{{ route('laravel.collection') }}">Collection</a>
+                    </li>
                 </ul>
             </div>
         </div>

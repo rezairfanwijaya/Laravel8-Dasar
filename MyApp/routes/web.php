@@ -283,3 +283,6 @@ Route::get('/laravel-mix', [HomeConstroller::class, 'laravelMix'])->name('larave
 // laravel Ui
 Route::get('/laravel-ui', [HomeConstroller::class, 'laravelUi'])->name('laravel.ui');
 
+// collection
+Route::get('/collection', [HomeConstroller::class, 'collection'])->name('laravel.collection');
+

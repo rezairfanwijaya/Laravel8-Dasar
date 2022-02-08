@@ -15,6 +15,9 @@ class CreateLaptopsTable extends Migration
     {
         Schema::create('laptops', function (Blueprint $table) {
             $table->id();
+            $table->string('brand');
+            $table->string('harga');
+            $table->integer('stok');
             $table->timestamps();
         });
     }

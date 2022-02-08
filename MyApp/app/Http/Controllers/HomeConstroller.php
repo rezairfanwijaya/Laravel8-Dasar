@@ -113,4 +113,25 @@ class HomeConstroller extends Controller
         ->with('title', 'Laravel UI');
     }
 
+    // Collection
+    public function collection(){
+        // data collection dengan output array numerik
+        $nama = collect(['Reza', 'Irfan', 'Wijaya', 'Abdas', 'Ipin', 
+        'Ipang', 'Tupong']);
+
+        // data collection dengan output object (JSON)
+        $kabupaten = collect([
+            'jawa tengah'=>'Cilacap',
+            'jawa barat'=>'Banjar Patroman',
+            'jawa timur'=>'Malang'
+        ]);
+        
+
+        return view('learning.collection')
+        ->with('title', 'Collection')
+        ->with('collectNUM', $nama)
+        ->with('collectJSON', $kabupaten)
+        ;
+    }
+
 }
