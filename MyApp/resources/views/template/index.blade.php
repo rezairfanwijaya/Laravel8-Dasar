@@ -70,7 +70,7 @@
         @yield('konten')
     </div>
 
-    <div class="footer bg-dark text-white text-center fixed-bottom p-2">
+    <div class="footer bg-dark text-white text-center p-3 mt-5">
         <footer>
             Copyright | {{ date('Y') }}
         </footer>

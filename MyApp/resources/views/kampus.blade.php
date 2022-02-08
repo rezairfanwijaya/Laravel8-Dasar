@@ -30,11 +30,20 @@
             </div>
         </div>
 
-        <h5 class="mt-5">Ini adalah facade snake</h5>
-        <p>{{ $snake }}</p>
+        <div class="bg-white p-3 shadow-sm mt-5">
+            <h5>Ini adalah facade snake</h5>
+            {{ $snake }}
+        </div>
 
-        <h5 class="mt-3">Ini adalah facade kebab</h5>
-        <p>{{ $kebab }}</p>
+        <div class="bg-white p-3 shadow-sm mt-3">
+            <h5>Ini adalah facade kebab</h5>
+            {{ $kebab }}
+        </div>
+
+        <div class="bg-white p-3 shadow-sm mt-3">
+            <h5>{{ $external }}</h5>
+        </div>
         
+
     </div>
 @endsection

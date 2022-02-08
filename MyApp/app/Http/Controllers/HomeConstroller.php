@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 // facade
 use Illuminate\Support\Str;
-
+// class external
+use App\Models\Laptop;
 class HomeConstroller extends Controller
 {
     // beranda
@@ -13,10 +14,16 @@ class HomeConstroller extends Controller
         // facade
         $snake = Str::snake('HalloSayaReza');
         $kebab = Str::kebab('HalloSayaReza');
+        // akses class external
+        $class = new Laptop();
+        $laptop = $class->nama();
+
         return view('kampus')
         ->with('title', 'Kampus | Belajar')
         ->with('snake', $snake)
         ->with('kebab', $kebab)
+        ->with('external', $laptop)
+
         ;
         
         
