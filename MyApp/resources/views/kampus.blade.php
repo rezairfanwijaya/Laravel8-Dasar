@@ -41,7 +41,7 @@
         </div>
 
         <div class="bg-white p-3 shadow-sm mt-3">
-            <h5>{{ $external[0]->nama }}</h5>
+            <h5>{{ $external}}</h5>
         </div>
         
 

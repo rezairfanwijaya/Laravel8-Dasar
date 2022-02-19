@@ -66,6 +66,10 @@
                     <li class="nav-item">
                         <a class="nav-link {{ $title === 'Collection' ? 'active' : '' }}" href="{{ route('laravel.collection') }}">Collection</a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {{ $title === 'DB Facade' ? 'active' : '' }}" href="{{ route('laravel.dbfacade') }}">DB Facade</a>
+                    </li>
                 </ul>
             </div>
         </div>

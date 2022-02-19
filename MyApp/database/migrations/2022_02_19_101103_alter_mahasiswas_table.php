@@ -14,9 +14,13 @@ class AlterMahasiswasTable extends Migration
     public function up()
     {
         Schema::table('mahasiswas', function (Blueprint $table) {
-            $table->renameColumn('nama', 'nama_lengkap');
-            $table->text('alamat')->after('tanggal_lahir');
-            $table->dropColumn('ipk');
+            $table->renameColumn('nama_lengkap', 'nama');
+            $table->dropColumn('tempat_lahir');
+            $table->dropColumn('alamat');
+            $table->dropColumn('fakultas');
+            $table->dropColumn('jurusan');
+
+
         });
     }
 
@@ -28,9 +32,11 @@ class AlterMahasiswasTable extends Migration
     public function down()
     {
         Schema::table('mahasiswas', function (Blueprint $table) {
-            $table->renameColumn('nama_lengkap', 'nama');
-            $table->dropColumn('alamat');
-            $table->decimal('ipk',3,2)->default(1.00);
+            $table->renameColumn('nama', 'nama_lengkap');
+            $table->string('alamat');
+            $table->string('fakultas');
+            $table->string('jurusan');
+            $table->string('tempat_lahir');
         });
     }
 }
