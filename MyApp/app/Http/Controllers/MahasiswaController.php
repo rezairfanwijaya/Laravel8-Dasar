@@ -16,4 +16,13 @@ class MahasiswaController extends Controller
         $insert = DB::insert("INSERT INTO mahasiswas(nim,nama,tanggal_lahir) VALUES (88675388, 'abdas', '2000-11-13')");
     \var_dump($insert);
     }
+
+    public function insertPrepared(){
+        $insert = DB::insert('
+        INSERT INTO mahasiswas (nim,nama,tanggal_lahir,ipk,created_at,updated_at)
+        VALUES(?,?,?,?,?,?)', [19102149, ' Reza Adas', '2000-11-13', 4.00, now(), now()]
+        );
+
+        var_dump($insert);
+    }
 }
