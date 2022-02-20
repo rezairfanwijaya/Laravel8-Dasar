@@ -43,4 +43,9 @@ class MahasiswaController extends Controller
         $update = DB::update("UPDATE mahasiswas set nim = '11111111' WHERE id = ?", [4]);
         var_dump($update);
     }
+
+    public function delete(){
+        $delete = DB::delete("DELETE FROM mahasiswas WHERE id = ?", [4]);
+        var_dump($delete);
+    }
 }
