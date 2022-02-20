@@ -38,4 +38,9 @@ class MahasiswaController extends Controller
         ]);
         var_dump($result);
     }
+
+    public function update(){
+        $update = DB::update("UPDATE mahasiswas set nim = '11111111' WHERE id = ?", [4]);
+        var_dump($update);
+    }
 }
