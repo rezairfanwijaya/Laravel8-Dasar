@@ -25,4 +25,17 @@ class MahasiswaController extends Controller
 
         var_dump($insert);
     }
+
+    public function insertBinding(){
+        $result = DB::insert('INSERT INTO mahasiswas (nim,nama,tanggal_lahir,ipk,created_at,updated_at) VALUES (:nim, :nama, :tl, :ipk, :created, :updated)', [
+            'nim' => '19102146',
+            'nama' => 'ipang',
+            'tl' => '2000-11-13',
+            'ipk' => '3.56',
+            'created' => now(),
+            'updated' => now()
+            
+        ]);
+        var_dump($result);
+    }
 }
