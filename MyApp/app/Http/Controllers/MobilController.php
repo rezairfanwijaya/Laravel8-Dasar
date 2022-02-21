@@ -8,6 +8,24 @@ use Illuminate\Support\Facades\DB;
 
 class MobilController extends Controller
 {
+    // halaman awal
+    public function index(){
+        // tampil data untuk yang insert single
+        $showSingle = DB::table('mobils')->where('merk', 'lamborghini')->get();
+        return view ('learning.queryBuilder')
+        ->with('title', 'Query Builder')
+        ->with('insertSingle', $showSingle)        
+        ;
+    }
+
+
+    // tampilkan data
+    public function tampil(){
+        $result = DB::table('mobils')->get();
+
+    }
+
+
     //insert
     public function tambah(){
         $result = DB::table('mobils')->insert(
@@ -18,9 +36,9 @@ class MobilController extends Controller
             'created_at' => now(),
             'updated_at' => now()
             ]
-        );
-
-        var_dump($result);
+        );  
+        
+        return redirect()->route('queryBuilder');
     }
 
     // insert banyak
@@ -80,9 +98,11 @@ class MobilController extends Controller
     }
 
     // hapus
-    public function hapus(){
-        $result = DB::table('mobils')->where('merk', 'angkot')->delete();
+    public function hapus($id){
+        $result = DB::table('mobils')->where('id', $id)->delete();
         var_dump($result);
+
+        return redirect()->route('queryBuilder');
     }
 
 }

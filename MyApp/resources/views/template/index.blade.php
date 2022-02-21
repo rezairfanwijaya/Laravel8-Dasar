@@ -72,7 +72,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link {{ $title === 'Query Builder' ? 'active' : '' }}" href="{{ route('laravel.dbfacade') }}">Query Builder</a>
+                        <a class="nav-link {{ $title === 'Query Builder' ? 'active' : '' }}" href="{{ route('queryBuilder') }}">Query Builder</a>
                     </li>
                 </ul>
             </div>

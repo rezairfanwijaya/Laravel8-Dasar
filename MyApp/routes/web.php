@@ -307,10 +307,12 @@ Route::get('/statement', [MahasiswaController::class,'reset']);
 
 
 // route untuk query builder
+Route::get('/query-builder', [MobilController::class, 'index'])->name('queryBuilder');
 Route::prefix('/qb')->group(function(){
     Route::get('/insert', [MobilController::class, 'tambah']);
     Route::get('/insertMany', [MobilController::class, 'tambahMany']);
     Route::get('/update', [MobilController::class, 'update']);
     Route::get('/updateor', [MobilController::class, 'updateAtauInsert']);
-    Route::get('/hapus', [MobilController::class, 'hapus']);
+    Route::get('/hapus/{id}', [MobilController::class, 'hapus'])->name('hapus');
+    Route::get('/tampil', [MobilController::class, 'tampil']);
 });
