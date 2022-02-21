@@ -19,7 +19,7 @@
                 <br>
                 <a href="/qb/insert">Klik disini</a> untuk menjalankan code
                 @forelse ($insertSingle as $item)
-                    <p>id -> {{ $item->id }}  merk -> {{ $item->merk }}  warna -> {{ $item->warna }}  harga -> {{ $item->harga }}  <a href="{{ route('hapus', [$item->id]) }}">(delete)</a>
+                    <p>id -> {{ $item->id }}  merk -> {{ $item->merk }}  warna -> {{ $item->warna }}  harga -> {{ $item->harga }}  <a href="{{ route('hapus', [$item->id]) }}">(delete)</a> 
                      </p>
                 @empty
                     
