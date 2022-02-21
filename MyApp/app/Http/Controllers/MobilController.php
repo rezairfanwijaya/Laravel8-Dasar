@@ -51,4 +51,13 @@ class MobilController extends Controller
         var_dump($result);
     }
 
+    // update
+    public function update(){
+        $result = DB::table('mobils')->where('merk', 'avanza')->update([
+            'merk' => 'Ferrari',
+            'harga' => 5000
+        ]);
+        var_dump ($result);
+    }
+
 }
