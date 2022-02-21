@@ -22,6 +22,7 @@ class MahasiswaController extends Controller
         ;
     }
 
+    // query insert
     public function insertSql(){
         $insert = DB::insert("INSERT INTO mahasiswas(nim,nama,tanggal_lahir) VALUES (88675388, 'abdas', '2000-11-13')");
     // \var_dump($insert);  
@@ -54,6 +55,7 @@ class MahasiswaController extends Controller
         return redirect ('/facade');
     }
 
+    // query update
     public function update(){
         $update = DB::update("UPDATE mahasiswas set nim = '11111111' WHERE nama = ?", ["ipang"]);
         // var_dump($update);
@@ -61,14 +63,24 @@ class MahasiswaController extends Controller
         return redirect ('/facade');
     }
 
+    // query delete
     public function delete($id){
         $delete = DB::delete("DELETE FROM mahasiswas WHERE id = ?", [$id]);
         var_dump($delete);
         return redirect ('/facade');
     }
 
+
+    // query select
     public function show (){
         $show = DB::select("SELECT * FROM mahasiswas");
-@dd($show);
     }
+
+    // dan ini adalah dbfacade untuk menjalankan selain query diatas (select, insert, update, delete)
+    public function reset(){
+        $reset = DB::statement("TRUNCATE mahasiswas");
+        return redirect ('/facade');
+    }
+
+    
 }

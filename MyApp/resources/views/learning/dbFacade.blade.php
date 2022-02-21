@@ -1,6 +1,6 @@
 @extends('template.index')
 @section('konten')
-{{-- @dd($all) --}}
+    {{-- @dd($all) --}}
     <div class="konten mt-3 bg-white rounded shadow-sm p-3">
         <ol>
             <div class="insert">
@@ -19,7 +19,7 @@
                             <div class="data">
                                 id : {{ $item->id }}, nama : {{ $item->nama }}, nim : {{ $item->nim }}, tanggal
                                 lahir : {{ $item->tanggal_lahir }}
-                                <a href="{{ route('delete', ['id'=>$item->id] )}}">(delete)</a>
+                                <a href="{{ route('delete', ['id' => $item->id]) }}">(delete)</a>
                             </div>
                         @empty
                         @endforelse
@@ -38,21 +38,23 @@
                             <div class="data">
                                 id : {{ $item->id }}, nama : {{ $item->nama }}, nim : {{ $item->nim }}, tanggal
                                 lahir : {{ $item->tanggal_lahir }}
-                                <a href="{{ route('delete', ['id'=>$item->id] )}}">(delete)</a>
+                                <a href="{{ route('delete', ['id' => $item->id]) }}">(delete)</a>
                             </div>
                         @empty
                         @endforelse
 
                         <li class="mt-3">Insert menggunakan named parameter</li>
-                        <code>  $result = DB::insert('INSERT INTO mahasiswas (nim,nama,tanggal_lahir,ipk,created_at,updated_at) VALUES (:nim, :nama, :tl, :ipk, :created, :updated)', [
+                        <code> $result = DB::insert('INSERT INTO mahasiswas
+                            (nim,nama,tanggal_lahir,ipk,created_at,updated_at) VALUES (:nim, :nama, :tl, :ipk, :created,
+                            :updated)', [
                             'nim' => '19102146',
                             'nama' => 'ipang',
                             'tl' => '2000-11-13',
                             'ipk' => '3.56',
                             'created' => now(),
                             'updated' => now()
-                            
-                        ]);</code>
+
+                            ]);</code>
                         <br>
                         {{-- proses insert data dengan prepared statement --}}
                         <a href="{{ url('/insert-binding') }}">Klik disini</a> untuk menjalankan code
@@ -61,10 +63,10 @@
                         @forelse ($parameter as $item)
                             <div class="data">
                                 id : {{ $item->id }}, nama : {{ $item->nama }}, nim : {{ $item->nim }}, tanggal
-                                lahir : {{ $item->tanggal_lahir }} 
-                                <a href="{{ route('delete', ['id'=>$item->id] )}}">(delete)</a>
+                                lahir : {{ $item->tanggal_lahir }}
+                                <a href="{{ route('delete', ['id' => $item->id]) }}">(delete)</a>
                             </div>
-                            
+
                         @empty
                         @endforelse
                     </ul>
@@ -82,9 +84,16 @@
             <div class="allData mt-4">
                 <li>Show All Data</li>
                 @foreach ($all as $item)
-                    <p>id->{{ $item->id }}  |  nama->{{ $item->nama }}  |  nim->{{ $item->nim }}  |  tanggal lahir->{{ $item->tanggal_lahir }}</p>
+                    <p>id->{{ $item->id }} | nama->{{ $item->nama }} | nim->{{ $item->nim }} | tanggal
+                        lahir->{{ $item->tanggal_lahir }}</p>
                 @endforeach
             </div>
         </ol>
+
+        <div class="reset mt-5 d-flex justify-content-center ">
+            <div class="btn btn-danger">
+                <a href="/statement" class="text-white text-decoration-none">Hapus Semua Data</a>
+            </div>
+        </div>
     </div>
 @endsection
