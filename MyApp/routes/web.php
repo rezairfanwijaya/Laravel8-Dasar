@@ -309,4 +309,5 @@ Route::get('/statement', [MahasiswaController::class,'reset']);
 // route untuk query builder
 Route::prefix('/qb')->group(function(){
     Route::get('/insert', [MobilController::class, 'tambah']);
+    Route::get('/insertMany', [MobilController::class, 'tambahMany']);
 });
