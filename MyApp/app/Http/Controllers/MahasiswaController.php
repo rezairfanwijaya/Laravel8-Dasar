@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 class MahasiswaController extends Controller
 {
     public function dbFacade (){
+        $all = DB::select("SELECT * FROM mahasiswas");
         $show = DB::select("SELECT * FROM mahasiswas WHERE nama = ?", ['abdas']);
         $showprepared = DB::select("SELECT * FROM mahasiswas WHERE nama = ?", ['Reza Adas']);
         $showparameter = DB::select("SELECT * FROM mahasiswas WHERE nama = ?", ['ipang']);
@@ -17,6 +18,7 @@ class MahasiswaController extends Controller
         ->with('data',$show)
         ->with('prepared',$showprepared)
         ->with('parameter',$showparameter)
+        ->with('all',$all)
         ;
     }
 
@@ -53,8 +55,10 @@ class MahasiswaController extends Controller
     }
 
     public function update(){
-        $update = DB::update("UPDATE mahasiswas set nim = '11111111' WHERE id = ?", [4]);
-        var_dump($update);
+        $update = DB::update("UPDATE mahasiswas set nim = '11111111' WHERE nama = ?", ["ipang"]);
+        // var_dump($update);
+
+        return redirect ('/facade');
     }
 
     public function delete($id){

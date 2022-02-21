@@ -1,5 +1,6 @@
 @extends('template.index')
 @section('konten')
+{{-- @dd($all) --}}
     <div class="konten mt-3 bg-white rounded shadow-sm p-3">
         <ol>
             <div class="insert">
@@ -73,6 +74,16 @@
 
             <div class="update mt-4">
                 <li>Update Data</li>
+                <code>$update = DB::update("UPDATE mahasiswas set nim = '11111111' WHERE nama = ?", ["ipang"]);</code>
+                <br>
+                <a href="/update">Klik disini</a> untuk mengupate data. Dan lihat hasilnya pada insert data bagian terakhir
+            </div>
+
+            <div class="allData mt-4">
+                <li>Show All Data</li>
+                @foreach ($all as $item)
+                    <p>id->{{ $item->id }}  |  nama->{{ $item->nama }}  |  nim->{{ $item->nim }}  |  tanggal lahir->{{ $item->tanggal_lahir }}</p>
+                @endforeach
             </div>
         </ol>
     </div>
