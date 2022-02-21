@@ -311,4 +311,6 @@ Route::prefix('/qb')->group(function(){
     Route::get('/insert', [MobilController::class, 'tambah']);
     Route::get('/insertMany', [MobilController::class, 'tambahMany']);
     Route::get('/update', [MobilController::class, 'update']);
+    Route::get('/updateor', [MobilController::class, 'updateAtauInsert']);
+    Route::get('/hapus', [MobilController::class, 'hapus']);
 });
