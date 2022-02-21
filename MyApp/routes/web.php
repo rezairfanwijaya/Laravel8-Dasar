@@ -303,3 +303,6 @@ Route::get('/select-tampil', [MahasiswaController::class,'selectTampil']);
 Route::get('/select-view', [MahasiswaController::class,'selectView']);
 Route::get('/select-where', [MahasiswaController::class,'selectWhere']);
 Route::get('/statement', [MahasiswaController::class,'reset']);
+
+
+// route untuk query builder

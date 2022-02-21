@@ -70,6 +70,10 @@
                     <li class="nav-item">
                         <a class="nav-link {{ $title === 'DB Facade' ? 'active' : '' }}" href="{{ route('laravel.dbfacade') }}">DB Facade</a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {{ $title === 'Query Builder' ? 'active' : '' }}" href="{{ route('laravel.dbfacade') }}">Query Builder</a>
+                    </li>
                 </ul>
             </div>
         </div>
