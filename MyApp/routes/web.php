@@ -4,6 +4,7 @@ use function Ramsey\Uuid\v1;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeConstroller;
+use App\Http\Controllers\MobilController;
 use Symfony\Component\VarDumper\VarDumper;
 use App\Http\Controllers\MahasiswaController;
 
@@ -306,3 +307,6 @@ Route::get('/statement', [MahasiswaController::class,'reset']);
 
 
 // route untuk query builder
+Route::prefix('/qb')->group(function(){
+    Route::get('/insert', [MobilController::class, 'tambah']);
+});
