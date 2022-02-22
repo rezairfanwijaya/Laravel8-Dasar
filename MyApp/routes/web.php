@@ -321,4 +321,5 @@ Route::prefix('/qb')->group(function(){
     Route::get('/first', [MobilController::class, 'first']);
     Route::get('/find', [MobilController::class, 'find']);
     Route::get('/raw', [MobilController::class, 'selectRaw']);
+    Route::get('/detail/{merk}', [MobilController::class, 'detailMobil'])->name('detail');
 });

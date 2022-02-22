@@ -16,10 +16,13 @@ class MobilController extends Controller
         // tampil data untuk yang insert jamak untuk mengambil data selain merk lamborghini
         $showJamak = DB::table('mobils')->where('merk', '<>', 'lamborghini')->get();
 
+        $showAll = DB::table('mobils')->get();
+
         
 
         return view ('learning.queryBuilder')
         ->with('title', 'Query Builder')
+        ->with('all', $showAll)
         ->with('insertSingle', $showSingle)        
         ->with('insertJamak', $showJamak)        
         ;
@@ -191,5 +194,17 @@ class MobilController extends Controller
         @dd($result);
 
     }
+
+
+    // detailMobil
+    public function detailMobil($merk){
+        $detail = DB::table('mobils')
+        ->where('merk', $merk)
+        ->get()
+        ;
+
+        return view('learning.detailMobil')
+        ->with('detail', $detail[0]);
+    }   
 
 }

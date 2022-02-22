@@ -57,7 +57,8 @@
                             <a href="{{ url('/qb/insertMany') }}">Klik disini</a> untuk menjalankan code
                             <br>
                             @forelse ($insertJamak as $item)
-                                <p>id->{{ $item->id }} merk->{{ $item->merk }} warna {{ $item->warna }} harga {{ $item->harga }} <a href="{{ route('hapus', [$item->id]) }}">(delete)</a>
+                                <p>id->{{ $item->id }} merk->{{ $item->merk }} warna {{ $item->warna }} harga
+                                    {{ $item->harga }} <a href="{{ route('hapus', [$item->id]) }}">(delete)</a>
                                 </p>
                             @empty
                             @endforelse
@@ -73,6 +74,17 @@
                     'merk' => 'Ferrari',
                     'harga' => 5000
                     ]);</code>
+            </div>
+
+            <div class="lilst-mobils mt-3">
+                <li>Daftar Mobil</li>
+                <ol>
+                    @forelse ($all as $item)
+                    <li><a href="{{ route('detail', ['merk'=>$item->merk]) }}">{{ $item->merk }}</a></li>
+                    
+                    @empty
+                    @endforelse
+                </ol>
             </div>
         </ol>
     </div>
