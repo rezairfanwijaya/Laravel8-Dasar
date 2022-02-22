@@ -207,4 +207,5 @@ class MobilController extends Controller
         ->with('detail', $detail[0]);
     }   
 
+    
 }
