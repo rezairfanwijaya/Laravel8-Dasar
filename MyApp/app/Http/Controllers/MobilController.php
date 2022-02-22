@@ -170,4 +170,14 @@ class MobilController extends Controller
         @dd($result);
     }
 
+
+    // method find ini khusus untuk mencari kolom id saja, jika ingin mencari kolom selain id kita bisa menggunakan klausa where
+    public function find(){
+        $result = DB::table('mobils')
+        ->find(21)
+        ;
+
+        @dd($result);
+    }
+
 }
