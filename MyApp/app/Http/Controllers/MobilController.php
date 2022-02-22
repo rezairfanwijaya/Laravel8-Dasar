@@ -180,4 +180,16 @@ class MobilController extends Controller
         @dd($result);
     }
 
+
+    // kita juga bisa menggabungkan db facade (sql biasa) dengan query builder yaitu mengguakan selectRaw
+    public function selectRaw(){
+        $result = DB::table('mobils')
+        ->selectRaw("COUNT(id) as jumlah")
+        ->get()
+        ;
+        echo $result[0]->jumlah;
+        @dd($result);
+
+    }
+
 }

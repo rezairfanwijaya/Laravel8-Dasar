@@ -320,4 +320,5 @@ Route::prefix('/qb')->group(function(){
     Route::get('/takeSkip', [MobilController::class, 'takeSkip']);
     Route::get('/first', [MobilController::class, 'first']);
     Route::get('/find', [MobilController::class, 'find']);
+    Route::get('/raw', [MobilController::class, 'selectRaw']);
 });
