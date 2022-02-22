@@ -149,4 +149,15 @@ class MobilController extends Controller
         var_dump($result[0]->harga);
     }
 
+    // men-skip data , sama seperti limit dan biasa nya dipakai untuk pagination
+    public function takeSkip(){
+        $result = DB::table('mobils')
+        ->skip(1)
+        ->take(2)
+        ->get()
+        ;
+
+        @dd($result);
+    }
+
 }
