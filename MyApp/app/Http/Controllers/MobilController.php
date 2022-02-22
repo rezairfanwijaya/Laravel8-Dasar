@@ -160,4 +160,14 @@ class MobilController extends Controller
         @dd($result);
     }
 
+    // method first akan mengmbil data pertama yang ia jumpai walaupun data itu ada lebih dari satu
+    public function first(){
+        $result = DB::table('mobils')
+        ->where('warna', 'hitam')
+        ->first()
+        ;
+
+        @dd($result);
+    }
+
 }
