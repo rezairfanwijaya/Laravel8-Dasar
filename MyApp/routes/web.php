@@ -315,4 +315,5 @@ Route::prefix('/qb')->group(function(){
     Route::get('/updateor', [MobilController::class, 'updateAtauInsert']);
     Route::get('/hapus/{id}', [MobilController::class, 'hapus'])->name('hapus');
     Route::get('/tampil', [MobilController::class, 'tampil']);
+    Route::get('/getWhere', [MobilController::class, 'getWhere']);
 });

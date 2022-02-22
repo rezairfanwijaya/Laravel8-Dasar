@@ -10,16 +10,21 @@ class MobilController extends Controller
 {
     // halaman awal
     public function index(){
-        // tampil data untuk yang insert single
+        // tampil data untuk yang insert tunggal (mengambil data yang hanya memilki merk lamborghini)
         $showSingle = DB::table('mobils')->where('merk', 'lamborghini')->get();
+
+        // tampil data untuk yang insert jamak untuk mengambil data selain merk lamborghini
+        $showJamak = DB::table('mobils')->where('merk', '<>', 'lamborghini')->get();
+
         return view ('learning.queryBuilder')
         ->with('title', 'Query Builder')
         ->with('insertSingle', $showSingle)        
+        ->with('insertJamak', $showJamak)        
         ;
     }
 
 
-    // tampilkan data
+    // tampilkan semua data
     public function tampil(){
         $result = DB::table('mobils')->get();
 
@@ -67,6 +72,8 @@ class MobilController extends Controller
             ]
         ]);
         var_dump($result);
+
+        return redirect()->route('queryBuilder');
     }
 
     // update
@@ -103,6 +110,25 @@ class MobilController extends Controller
         var_dump($result);
 
         return redirect()->route('queryBuilder');
+    }
+
+
+    // memilih data tertentu dan mengurutkan nya (DESC/ASC)
+    public function getWhere(){
+        $result = DB::table('mobils')
+        ->where('harga', '<', 450000)
+        ->orderBy('id', 'desc')
+        ->get()
+        ;
+        
+        $jumlah = $result->count();
+
+        echo "Jumlah data = $jumlah";
+        echo "<br>";
+        foreach ($result as $item) {
+            echo "<p> $item->id $item->merk $item->warna $item->harga  </p>";
+        }
+        
     }
 
 }
