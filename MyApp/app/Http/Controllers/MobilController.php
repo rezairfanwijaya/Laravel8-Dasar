@@ -16,6 +16,8 @@ class MobilController extends Controller
         // tampil data untuk yang insert jamak untuk mengambil data selain merk lamborghini
         $showJamak = DB::table('mobils')->where('merk', '<>', 'lamborghini')->get();
 
+        
+
         return view ('learning.queryBuilder')
         ->with('title', 'Query Builder')
         ->with('insertSingle', $showSingle)        
@@ -116,8 +118,8 @@ class MobilController extends Controller
     // memilih data tertentu dan mengurutkan nya (DESC/ASC)
     public function getWhere(){
         $result = DB::table('mobils')
-        ->where('harga', '<', 450000)
-        ->orderBy('id', 'desc')
+        ->where('merk', '<>', 'lamborghini')
+        ->orderBy('harga', 'desc')
         ->get()
         ;
         
@@ -128,7 +130,23 @@ class MobilController extends Controller
         foreach ($result as $item) {
             echo "<p> $item->id $item->merk $item->warna $item->harga  </p>";
         }
+
+        return $item;
         
+    }
+
+    // menyeleksi kolom apasaja yang akan ditampilkan menggunakan method select
+    public function select (){
+        $result = DB::table('mobils')
+        ->where('merk', 'lamborghini')
+        ->select('harga')
+        ->get();
+
+        $jumlah = $result->count();
+
+        echo $jumlah;
+        echo "<br>";
+        var_dump($result[0]->harga);
     }
 
 }
