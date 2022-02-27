@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeConstroller;
 use App\Http\Controllers\MobilController;
 use Symfony\Component\VarDumper\VarDumper;
 use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\DosenController;
 
 /*
 |--------------------------------------------------------------------------
@@ -322,4 +323,12 @@ Route::prefix('/qb')->group(function(){
     Route::get('/find', [MobilController::class, 'find']);
     Route::get('/raw', [MobilController::class, 'selectRaw']);
     Route::get('/detail/{merk}', [MobilController::class, 'detailMobil'])->name('detail');
+});
+
+
+// route untuk eloquent orm
+Route::get('/eloquent', [DosenController::class, 'index'] )->name('eloquent');
+Route::prefix('/orm')->group(function(){
+    Route::get('/insert', [DosenController::class, 'insert']);
+    Route::get('/mass-asignment', [DosenController::class, 'massAsignment']);
 });

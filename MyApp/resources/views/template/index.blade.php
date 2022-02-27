@@ -74,6 +74,10 @@
                     <li class="nav-item">
                         <a class="nav-link {{ $title === 'Query Builder' ? 'active' : '' }}" href="{{ route('queryBuilder') }}">Query Builder</a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {{ $title === 'Eloquent ORM' ? 'active' : '' }}" href="{{ route('eloquent') }}">Eloquent ORM</a>
+                    </li>
                 </ul>
             </div>
         </div>
