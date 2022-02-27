@@ -49,5 +49,47 @@ class DosenController extends Controller
                 'tanggal_lahir' => '2000-08-10'
             ]
         );
+
+        $dosen3 = Dosen::create(
+            [
+                'nama'          => 'Reza Wijaya Kusuma',
+                'pengampu'      => 'Biologi',
+                'nip'           => '12495',
+                'gaji'          => 341879,
+                'tanggal_lahir' => '2000-08-10'
+            ]
+        );
+
+        @dd($dosen1);
+        @dd($dosen2);
+        @dd($dosen3);
     }
+
+    // function update biasa
+    public function update($id){
+        $dosen = Dosen::find($id);
+        $dosen -> nama = "Ifan";
+        $dosen->save();
+        @dd($dosen);
+    }
+
+    // function untuk update menggunakan where
+    public function updateWhere($keahlian){
+        $dosen = Dosen::where('pengampu', $keahlian)->first();
+        $dosen->nip = "324323";
+        $dosen->nama = "Eza";
+        $dosen->save();
+        @dd($dosen); 
+    }
+
+    // function untuk update menggunakan mass-update
+    public function updateMass($keahlian){
+        $dosen = Dosen::where('pengampu', $keahlian)->first()->update([
+            "nip" => "45688",
+            "nama" => "Aduuuuah"
+        ]);
+
+        @dd($dosen);
+    }
+
 }

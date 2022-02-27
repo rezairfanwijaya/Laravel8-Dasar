@@ -331,4 +331,7 @@ Route::get('/eloquent', [DosenController::class, 'index'] )->name('eloquent');
 Route::prefix('/orm')->group(function(){
     Route::get('/insert', [DosenController::class, 'insert']);
     Route::get('/mass-asignment', [DosenController::class, 'massAsignment']);
+    Route::get('/update/{id}', [DosenController::class, 'update']);
+    Route::get('/update-where/{keahlian}', [DosenController::class, 'updateWhere']);
+    Route::get('/update-mass/{keahlian}', [DosenController::class, 'updateMass']);
 });
