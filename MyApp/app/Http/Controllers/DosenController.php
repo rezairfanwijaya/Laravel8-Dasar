@@ -89,7 +89,7 @@ class DosenController extends Controller
             "nama" => "Aduuuuah"
         ]);
 
-        @dd($dosen);
+         @dd($dosen);
     }
 
 }
