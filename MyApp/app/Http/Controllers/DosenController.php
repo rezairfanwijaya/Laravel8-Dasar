@@ -92,4 +92,14 @@ class DosenController extends Controller
          @dd($dosen);
     }
 
+
+    // function untuk menghapus data
+    public function hapus($nip){
+        $dosen = Dosen::where('nip', $nip);
+        $dosen->delete();
+        
+        // $dosen = Dosen::find($id);
+        // @dd($dosen);
+    }
+
 }

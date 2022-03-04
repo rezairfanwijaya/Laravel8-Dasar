@@ -334,4 +334,5 @@ Route::prefix('/orm')->group(function(){
     Route::get('/update/{id}', [DosenController::class, 'update']);
     Route::get('/update-where/{keahlian}', [DosenController::class, 'updateWhere']);
     Route::get('/update-mass/{keahlian}', [DosenController::class, 'updateMass']);
+    Route::get('/delete/{nip}', [DosenController::class, 'hapus']);
 });
