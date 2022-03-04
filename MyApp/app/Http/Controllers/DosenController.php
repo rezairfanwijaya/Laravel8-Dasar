@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Dosen;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
 class DosenController extends Controller
@@ -59,10 +60,35 @@ class DosenController extends Controller
                 'tanggal_lahir' => '2000-08-10'
             ]
         );
+        $dosen4 = Dosen::create(
+            [
+                'nama'          => 'Eza',
+                'pengampu'      => 'Informatika',
+                'nip'           => '123',
+                'gaji'          => 341879,
+                'tanggal_lahir' => '2000-08-10'
+            ]
+        );
+        $dosen5 = Dosen::create(
+            [
+                'nama'          => 'Ipang',
+                'pengampu'      => 'Kimia',
+                'nip'           => '8757',
+                'gaji'          => 341879,
+                'tanggal_lahir' => '2000-08-10'
+            ]
+        );
+        $dosen6 = Dosen::create(
+            [
+                'nama'          => 'Ede Ifan',
+                'pengampu'      => 'DKV',
+                'nip'           => '83267',
+                'gaji'          => 341879,
+                'tanggal_lahir' => '2000-08-10'
+            ]
+        );
 
-        @dd($dosen1);
-        @dd($dosen2);
-        @dd($dosen3);
+       return "Input berhasil";
     }
 
     // function update biasa
@@ -70,7 +96,7 @@ class DosenController extends Controller
         $dosen = Dosen::find($id);
         $dosen -> nama = "Ifan";
         $dosen->save();
-        @dd($dosen);
+@dd($dosen);
     }
 
     // function untuk update menggunakan where
@@ -79,7 +105,7 @@ class DosenController extends Controller
         $dosen->nip = "324323";
         $dosen->nama = "Eza";
         $dosen->save();
-        @dd($dosen); 
+@dd($dosen);
     }
 
     // function untuk update menggunakan mass-update
@@ -89,7 +115,7 @@ class DosenController extends Controller
             "nama" => "Aduuuuah"
         ]);
 
-         @dd($dosen);
+@dd($dosen);
     }
 
 
@@ -97,9 +123,66 @@ class DosenController extends Controller
     public function hapus($nip){
         $dosen = Dosen::where('nip', $nip);
         $dosen->delete();
-        
+
         // $dosen = Dosen::find($id);
         // @dd($dosen);
+    }
+
+    // function show all data
+    public function show(){
+        $dosen = Dosen::all();
+        foreach ($dosen as $item) {
+            echo $item->id;
+            echo "<br>";
+            echo $item->nama;
+            echo "<br>";
+            echo $item->nip;
+            echo "<br>";
+            echo $item->pengampu;
+            echo "<br>";
+            echo $item->gaji;
+            echo "<br>";
+            echo $item->tanggal_lahir;
+            echo "<hr>";
+        }
+    }
+
+    // soft delete 
+    // data seolah2 dihapus padahal masih ada di database
+    public function softDelete($id){
+        $dosen = Dosen::where('id', $id);
+        $dosen->delete();
+
+        // ini akan memanggil semua data di database kecuali data yg terhapus
+        $all = Dosen::all();
+
+        // ini akan memanggil semua data di database berserta data yang sudah terhapus
+        // $all = Dosen::withTrashed()->get();
+
+        // jika menggunakan query builder atau DB facade maka semua data akan terpanggil tanpa terkecuali
+        // $all = DB::table('dosens')->select()->first();
+        // $all = DB::select('select * from dosens');
+        return $all;
+  }
+
+    //   restore 
+    //  ini dugunakan untuk mengembalikan data yang sudah terhapus sebelumnya melalui softdelete
+    public function restoreData(){
+        $restore = Dosen::withTrashed()
+        ->where('id', 1)
+        ->restore();
+
+        $all = Dosen::all();
+        return $all;
+    }
+
+    public function method(){
+        $dosen = Dosen::where('nama' ,'like', '%eza%')
+        ->skip(1)->take(3)
+        ->get();
+        return $dosen;
+
+        
     }
 
 }

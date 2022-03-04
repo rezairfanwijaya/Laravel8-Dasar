@@ -21,6 +21,7 @@ class CreateDosensTable extends Migration
             $table->integer('gaji');
             $table->date('tanggal_lahir');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
