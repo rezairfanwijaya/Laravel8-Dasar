@@ -1,6 +1,4 @@
 <?php
-
-
 namespace App\Http\Controllers;
 
 use App\Models\Dosen;
@@ -116,7 +114,7 @@ class DosenController extends Controller
             "nama" => "Aduuuuah"
         ]);
 
-@dd($dosen);
+        @dd($dosen);
     }
 
 
