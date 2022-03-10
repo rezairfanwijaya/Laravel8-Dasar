@@ -1,8 +1,8 @@
 @extends('template.index')
 @section('konten')
-    @dump($errors)
+    {{-- @dump($errors) --}}
     <div class="cover bg-white p-5 my-5 rounded shadow-sm">
-        <form action="{{ route('form-process') }}" method="POST">
+        <form action="{{ route('form-process-validator') }}" method="POST">
             @csrf
             <p class="text-center mb-5 fs-4 ">Form Registrasi Karyawan</p>
             <div class="mb-3">
@@ -95,14 +95,9 @@
                     <option value="Quality Engineers" {{ old('posisi') == 'Quality Engineers' ? 'selected' : '' }}>
                         Quality Engineers
                     </option>
-                    
+
                 </select>
             </div>
-
-            {{-- <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div> --}}
             <button type="submit" class="btn btn-primary mt-4" style="width: 100%">Daftar</button>
         </form>
     </div>

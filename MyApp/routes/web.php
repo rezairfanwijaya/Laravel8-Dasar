@@ -346,5 +346,6 @@ Route::prefix('/orm')->group(function(){
 
 // form
 Route::get('/form', [KaryawanController::class, 'index'])->name('form');
-Route::post('/form-process', [KaryawanController::class, 'formProcess'])->name('form-process');
+Route::post('/form-process-method-validate', [KaryawanController::class, 'formProcess'])->name('form-process');
+Route::post('/form-process-class-validate', [KaryawanController::class, 'formProcessValidator'])->name('form-process-validator');
 
