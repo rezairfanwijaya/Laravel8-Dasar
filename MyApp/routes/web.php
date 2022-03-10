@@ -3,11 +3,12 @@
 use function Ramsey\Uuid\v1;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\DosenController;
 use App\Http\Controllers\HomeConstroller;
 use App\Http\Controllers\MobilController;
 use Symfony\Component\VarDumper\VarDumper;
+use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\MahasiswaController;
-use App\Http\Controllers\DosenController;
 
 /*
 |--------------------------------------------------------------------------
@@ -340,4 +341,10 @@ Route::prefix('/orm')->group(function(){
     Route::get('/restore', [DosenController::class, 'restoreData']);
     Route::get('/methode', [DosenController::class, 'method']);
 });
+
+
+
+// form
+Route::get('/form', [KaryawanController::class, 'index'])->name('form');
+Route::post('/form-process', [KaryawanController::class, 'formProcess'])->name('form-process');
 

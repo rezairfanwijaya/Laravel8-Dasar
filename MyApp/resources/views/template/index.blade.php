@@ -78,6 +78,10 @@
                     <li class="nav-item">
                         <a class="nav-link {{ $title === 'Eloquent ORM' ? 'active' : '' }}" href="{{ route('eloquent') }}">Eloquent ORM</a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {{ $title === 'Form' ? 'active' : '' }}" href="{{ route('form') }}">Form</a>
+                    </li>
                 </ul>
             </div>
         </div>
