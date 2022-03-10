@@ -84,6 +84,8 @@ class KaryawanController extends Controller
         // );
 
 
+        
+
         // validasi diatas bisa diganti bentuk jadi seperti ini
         $checkData = [
             'nama' => 'required|min:2|max:20',
