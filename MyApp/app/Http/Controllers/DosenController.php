@@ -23,7 +23,7 @@ class DosenController extends Controller
         $dosen->tanggal_lahir = "2000-11-13";
         $dosen->save();
 
-@dd($dosen);
+        @dd($dosen);
     }
 
     // mass-assignment (insert data lebih dari satu)
@@ -95,7 +95,7 @@ class DosenController extends Controller
         $dosen = Dosen::find($id);
         $dosen -> nama = "Ifan";
         $dosen->save();
-@dd($dosen);
+        @dd($dosen);
     }
 
     // function untuk update menggunakan where
@@ -104,7 +104,7 @@ class DosenController extends Controller
         $dosen->nip = "324323";
         $dosen->nama = "Eza";
         $dosen->save();
-@dd($dosen);
+        @dd($dosen);
     }
 
     // function untuk update menggunakan mass-update

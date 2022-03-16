@@ -75,7 +75,7 @@
 
             <div class="mb-3">
                 <label for="posisi" class="form-label">Posisi</label>
-                <select name="posisi" id="posisi" class="form-control">
+                <select name="posisi" id="posisi" class="form-select">
                     <option value="Office Boy" {{ old('posisi') == 'Office Boy' ? 'selected' : '' }}>
                         Office Boy
                     </option>
