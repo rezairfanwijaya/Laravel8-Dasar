@@ -30,3 +30,4 @@ class GuitarController extends Controller
         @dd($data);
     }
 }
+
