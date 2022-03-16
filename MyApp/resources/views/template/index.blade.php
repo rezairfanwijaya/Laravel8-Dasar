@@ -24,14 +24,14 @@
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-5">
-        <div class="container-fluid">
+        <div class="">
             <a class="navbar-brand" href="/kampus">Kampus Belajar</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
+                <ul class="navbar-nav me-auto ">
 
                     <li class="nav-item">
                         <a class="nav-link {{ $title === 'Kampus | Belajar' ? 'active' : '' }}" aria-current="page"
@@ -81,6 +81,10 @@
 
                     <li class="nav-item">
                         <a class="nav-link {{ $title === 'Form' ? 'active' : '' }}" href="{{ route('form') }}">Form</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {{ $title === 'Localization' ? 'active' : '' }}" href="{{ route('localization') }}">Localization</a>
                     </li>
                 </ul>
             </div>

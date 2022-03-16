@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\HomeConstroller;
 use App\Http\Controllers\MobilController;
+use App\Http\Controllers\GuitarController;
 use Symfony\Component\VarDumper\VarDumper;
 use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\MahasiswaController;
@@ -348,4 +349,12 @@ Route::prefix('/orm')->group(function(){
 Route::get('/form', [KaryawanController::class, 'index'])->name('form');
 Route::post('/form-process-method-validate', [KaryawanController::class, 'formProcess'])->name('form-process');
 Route::post('/form-process-class-validate', [KaryawanController::class, 'formProcessValidator'])->name('form-process-validator');
+
+
+// localization
+Route::get('/localization', function(){
+    return view('learning.localization')->with('title', 'Localization');
+})->name('localization');
+
+Route::post('/localization/process', [GuitarController::class, 'store'])->name('localization.store');
 
