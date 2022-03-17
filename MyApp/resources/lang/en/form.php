@@ -4,7 +4,7 @@ return [
     
     'input' => [
         'merk' => 'Brand',
-        'no_seri' => 'Serial Numbers',
+        'seri' => 'Serial Numbers',
         'warna' => 'Color',
         'harga' => 'Price',
         'jenis' => 'Genre',
