@@ -15,7 +15,14 @@
     <div class="cover bg-white p-5 my-5 rounded shadow-sm">
         <form action="{{ route('localization.store') }}" method="POST">
             @csrf
-            <p class="text-center mb-5 fs-4 ">@lang('form.judul')</p>
+            <div class="d-flex justify-content-between">
+                <p class="text-center mb-5 fs-4 ">@lang('form.judul')</p>
+                <div class="d-flex">
+                    {{-- untuk berpindah bahasa --}}
+                    <a href={{ route('localization.en') }}>En</a>
+                    <a href="{{ route('localization.id') }}" class="ms-4">Id</a>
+                </div>
+            </div>
             <div class="mb-3">
                 <label for="merk" class="form-label">@lang('form.input.merk')</label>
                 <input type="text" class="form-control @error('merk') is-invalid @enderror" id="merk" name="merk"

@@ -352,9 +352,14 @@ Route::post('/form-process-class-validate', [KaryawanController::class, 'formPro
 
 
 // localization
-Route::get('/localization', function(){
-    return view('learning.localization')->with('title', 'Localization');
-})->name('localization');
+Route::get('/localization', [GuitarController::class, 'index'])->name('localization.index');
 
+// form dalam bahasa indonesia
+Route::get('/localization/id', [GuitarController::class, 'formId'])->name('localization.id');
+
+// form dalam bahasa inggris
+Route::get('/localization/en', [GuitarController::class, 'formEn'])->name('localization.en');
+
+// store data dari form
 Route::post('/localization/process', [GuitarController::class, 'store'])->name('localization.store');
 

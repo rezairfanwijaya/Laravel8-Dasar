@@ -84,7 +84,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link {{ $title === 'Localization' ? 'active' : '' }}" href="{{ route('localization') }}">Localization</a>
+                        <a class="nav-link {{ $title === 'Localization' ? 'active' : '' }}" href="{{ route('localization.index') }}">Localization</a>
                     </li>
                 </ul>
             </div>
