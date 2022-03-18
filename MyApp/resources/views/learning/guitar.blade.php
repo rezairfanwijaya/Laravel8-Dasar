@@ -10,6 +10,38 @@
             </div>
         </div>
 
+
+
+        {{-- tampil data guitar --}}
+        <div class="tampil-data my-4 bg-white p-3 shadow-sm rounded">
+            <p class="fs-2 mb-4">Daftar Gitar</p>
+            <table class="table text-center ">
+                <tr>
+                    <th>No</th>
+                    <th>Brand</th>
+                    <th>Serial Number</th>
+                    <th>Warna</th>
+                    <th>Harga</th>
+                    <th>Jenis</th>
+                </tr>
+
+                @foreach ($guitars as $guitar)
+                    <tr>
+                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $guitar->merk }}</td>
+                        <td>{{ $guitar->serial_number }}</td>
+                        <td>{{ $guitar->warna }}</td>
+                        <td>Rp {{ number_format($guitar->harga,0,",",".")  }}</td>
+                        <td>{{ $guitar->jenis }}</td>
+                    </tr>
+                @endforeach
+                
+                
+            </table>
+        </div>
+
+
+
         <form action={{ route('guitar.store') }} method="post" class="bg-white p-4 shadow-sm rounded">
             <h5 class="mb-4">@lang('formGuitar.judul')</h5>
 
@@ -26,8 +58,8 @@
 
             <div class="mb-3">
                 <label for="no_seri" class="form-label">@lang('formGuitar.input.seri')</label>
-                <input type="text" name="noSeri" class="form-control @error('noSeri') is-invalid @enderror" id="no_seri"
-                    value={{ old('noSeri') }}>
+                <input type="text" name="serial_number" class="form-control @error('noSeri') is-invalid @enderror"
+                    id="no_seri" value={{ old('noSeri') }}>
                 @error('noSeri')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
@@ -54,7 +86,7 @@
             <div class="mb-5">
                 <label for="jenis" class="form-label">@lang('formGuitar.input.jenis')</label>
                 <select name="jenis" id="jenis" class="form-select">
-                    
+
                     <option value="Klasik" {{ old('jenis') === 'Klasik' ? 'selected' : '' }}>
                         @lang('formGuitar.input.pilihan_jenis.klasik')
                     </option>

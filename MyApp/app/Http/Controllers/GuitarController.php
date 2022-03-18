@@ -54,8 +54,10 @@ class GuitarController extends Controller
 
     // FUNCTION HANDLE CRUD
     public function home(){
+        $guitars = Guitar::all();
         return view('learning.guitar')
-        ->with('title', 'Guitar');
+        ->with('title', 'Guitar')
+        ->with('guitars', $guitars);
     }
 
     public function formGuitarId(){
@@ -72,7 +74,7 @@ class GuitarController extends Controller
 
         $filter = [
             'merk' => 'required|min:3',
-            'noSeri' => 'required|size:5',
+            'serial_number' => 'required|size:5',
             'warna' => 'required',
             'harga' => 'required',
             'jenis' => 'required',
@@ -90,17 +92,22 @@ class GuitarController extends Controller
             return redirect()->route('guitar.home')->withErrors($data)->withInput();
         }
 
-        $gitar = new Guitar();
-        $gitar->merk = $req['merk'];
-        $gitar->serial_number = $req['noSeri'];
-        $gitar->warna = $req['warna'];
-        $gitar->harga = $req['harga'];
-        $gitar->jenis = $req['jenis'];
+        // ini cara biasa
+        // $gitar = new Guitar();
+        // $gitar->merk = $req['merk'];
+        // $gitar->serial_number = $req['noSeri'];
+        // $gitar->warna = $req['warna'];
+        // $gitar->harga = $req['harga'];
+        // $gitar->jenis = $req['jenis'];
 
-        $gitar->save();
+        // $gitar->save();
+        // @dd($req->all());
 
-        return "Data Berhasil disimpan";
+
+        // ini cara mass assignment
+        Guitar::create($req->all());
+
+        return redirect()->route('guitar.home');
     }
     
 }
-
