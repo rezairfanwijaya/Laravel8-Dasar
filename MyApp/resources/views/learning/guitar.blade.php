@@ -20,9 +20,7 @@
                     <th>No</th>
                     <th>Brand</th>
                     <th>Serial Number</th>
-                    <th>Warna</th>
-                    <th>Harga</th>
-                    <th>Jenis</th>
+                    <th>Action</th>
                 </tr>
 
                 @foreach ($guitars as $guitar)
@@ -30,13 +28,13 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $guitar->merk }}</td>
                         <td>{{ $guitar->serial_number }}</td>
-                        <td>{{ $guitar->warna }}</td>
-                        <td>Rp {{ number_format($guitar->harga,0,",",".")  }}</td>
-                        <td>{{ $guitar->jenis }}</td>
+                        <td>
+                            <a href={{ route('guitar.show', ['guitar'=>$guitar->id]) }}>Detail</a>
+                        </td>
                     </tr>
                 @endforeach
-                
-                
+
+
             </table>
         </div>
 
@@ -106,4 +104,3 @@
         </form>
     </div>
 @endsection
-

@@ -109,5 +109,11 @@ class GuitarController extends Controller
 
         return redirect()->route('guitar.home');
     }
+
+    public function showGuitar(Guitar $guitar){
+        // $gitar = Guitar::findOrFail($guitar);
+        return view ('learning.detailGuitar')->with('gitar', $guitar);
+
+    }
     
 }
