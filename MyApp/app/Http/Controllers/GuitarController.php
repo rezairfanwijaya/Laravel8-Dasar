@@ -107,6 +107,9 @@ class GuitarController extends Controller
         // ini cara mass assignment
         Guitar::create($req->all());
 
+        // flash data
+        // flash data adalah pesan yang disimpan dalam sebuah session
+        $req->session()->flash('pesan', "Data {$req->merk} berhasil ditambahkan");
         return redirect()->route('guitar.home');
     }
 

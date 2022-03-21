@@ -1,5 +1,13 @@
 @extends('template.index')
 @section('konten')
+    {{-- mengakses pesan lewat flash --}}
+    @if (session()->has('pesan'))
+        <div class="mt-5 alert alert-success">
+            {{ session()->get('pesan') }}
+        </div>
+    @endif
+
+
     <div class="cover mt-5">
         <div class="d-flex justify-content-between align-items-center bg-white p-3 shadow-sm rounded mb-5">
             <div class="fs-2">@lang('formGuitar.head')</div>
@@ -29,7 +37,7 @@
                         <td>{{ $guitar->merk }}</td>
                         <td>{{ $guitar->serial_number }}</td>
                         <td>
-                            <a href={{ route('guitar.show', ['guitar'=>$guitar->id]) }}>Detail</a>
+                            <a href={{ route('guitar.show', ['guitar' => $guitar->id]) }}>Detail</a>
                         </td>
                     </tr>
                 @endforeach
