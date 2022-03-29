@@ -370,3 +370,4 @@ Route::get('/guitar/id', [GuitarController::class, 'formGuitarId'])->name('guita
 Route::get('/guitar/en', [GuitarController::class, 'formGuitarEn'])->name('guitar.form.en');
 Route::post('/guitar/create', [GuitarController::class, 'storeGuitar'])->name('guitar.store');
 Route::get('/guitar/{guitar}', [GuitarController::class, 'showGuitar'])->name('guitar.show');
+Route::delete('/guitar/{guitar}', [GuitarController::class, 'deleteGuitar'])->name('guitar.delete');

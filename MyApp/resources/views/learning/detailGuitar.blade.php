@@ -22,6 +22,13 @@
         </ul>
 
         <a href={{ route('guitar.home') }} class="btn btn-primary">Beranda</a>
+
+        {{-- hapus --}}
+        <form action={{ route('guitar.delete', ['guitar' => $gitar->id]) }} method="post" class="d-inline">
+            @csrf
+            @method('delete')
+            <button type="submit" class="btn btn-danger">Hapus</button>
+        </form>
     </div>
 </body>
 

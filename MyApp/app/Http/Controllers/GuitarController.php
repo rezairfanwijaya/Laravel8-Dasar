@@ -72,25 +72,26 @@ class GuitarController extends Controller
 
     public function storeGuitar(Request $req){
 
-        $filter = [
+        $validateData = $req->validate([
             'merk' => 'required|min:3',
-            'serial_number' => 'required|size:5',
+            'serial_number' => 'required|size:5|unique:guitars',
             'warna' => 'required',
             'harga' => 'required',
             'jenis' => 'required',
-        ];
+        ]);
 
-        $err = [
-            'required' => 'kolom :attribute harus diisi',
-            'min' => 'kolom :attribute minimal terdiri dari :min karakter',
-            'size' => "kolom :attribute harus terdiri dari :size karakter"
-        ];
+        // $err = [
+        //     'required' => 'kolom :attribute harus diisi',
+        //     'min' => 'kolom :attribute minimal terdiri dari :min karakter',
+        //     'size' => "kolom :attribute harus terdiri dari :size karakter"
+        // ];
 
-        $data = Validator::make($req->all(), $filter, $err);
+        Guitar::create($validateData);
+        // $data = Validator::make($req->all(), $filter, $err);
         
-        if ($data->fails()){
-            return redirect()->route('guitar.home')->withErrors($data)->withInput();
-        }
+        // if ($data->fails()){
+        //     return redirect()->route('guitar.home')->withErrors($data)->withInput();
+        // }
 
         // ini cara biasa
         // $gitar = new Guitar();
@@ -105,7 +106,7 @@ class GuitarController extends Controller
 
 
         // ini cara mass assignment
-        Guitar::create($req->all());
+        // Guitar::create($req->all());
 
         // flash data
         // flash data adalah pesan yang disimpan dalam sebuah session
@@ -117,6 +118,13 @@ class GuitarController extends Controller
         // $gitar = Guitar::findOrFail($guitar);
         return view ('learning.detailGuitar')->with('gitar', $guitar);
 
-    }
+    }  
     
+    // fuctions untuk menghapus data
+    public function deleteGuitar(Guitar $guitar){
+        $guitar->delete();
+        // flash data
+        session()->flash('pesanHapus', "Data {$guitar->merk} berhasil dihapus");
+        return redirect()->route('guitar.home');
+    }
 }

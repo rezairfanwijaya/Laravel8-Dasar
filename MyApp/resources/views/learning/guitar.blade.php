@@ -1,9 +1,16 @@
 @extends('template.index')
 @section('konten')
-    {{-- mengakses pesan lewat flash --}}
+    {{-- mengakses pesan berhasil tambah gitar lewat flash --}}
     @if (session()->has('pesan'))
         <div class="mt-5 alert alert-success">
             {{ session()->get('pesan') }}
+        </div>
+    @endif
+
+    {{-- mengakses pesan berhasil hapus gitar lewat flash --}}
+    @if (session()->has('pesanHapus'))
+        <div class="mt-5 alert alert-danger">
+            {{ session()->get('pesanHapus') }}
         </div>
     @endif
 
