@@ -71,9 +71,9 @@
 
             <div class="mb-3">
                 <label for="no_seri" class="form-label">@lang('formGuitar.input.seri')</label>
-                <input type="text" name="serial_number" class="form-control @error('noSeri') is-invalid @enderror"
-                    id="no_seri" value={{ old('noSeri') }}>
-                @error('noSeri')
+                <input type="text" name="serial_number" class="form-control @error('serial_number') is-invalid @enderror"
+                    id="no_seri" value={{ old('serial_number') }}>
+                @error('serial_number')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
             </div>

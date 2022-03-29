@@ -16,7 +16,7 @@ class CreateGuitarsTable extends Migration
         Schema::create('guitars', function (Blueprint $table) {
             $table->id();
             $table->string('merk');
-            $table->string('serial_number');
+            $table->string('serial_number')->unique();
             $table->string('warna');
             $table->integer('harga');
             $table->string('jenis');
