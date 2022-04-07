@@ -119,6 +119,33 @@ class GuitarController extends Controller
         return view ('learning.detailGuitar')->with('gitar', $guitar);
 
     }  
+
+    // function untuk mengedit guitar
+    public function editGuitar(Guitar $id){
+        return view('learning.editGuitar')->with('gitar', $id)->with('title', 'Edit Guitar');
+    }
+
+    // function untuk mengupdate gitar setelah berhasil di edit
+    public function updateGuitar(Request $req, Guitar $id){
+        // validasi data
+        $validasi = $req->validate([
+            'merk' => '|min:3',
+            'serial_number' => '|size:5|unique:guitars,serial_number,'.$id->id, // ini akan mengabaikan data yang sama
+            'warna' => '',
+            'harga' => '',
+            'jenis' => '',
+        ]);
+
+        // update data
+        $id->update($validasi);
+
+        // flash data
+        session()->flash('pesanUpdate', "Data {$req->merk} berhasil diubah");
+
+        // redirect ke halaman detail gitar
+        return redirect()->route('guitar.show', $id->id);
+        
+    }
     
     // fuctions untuk menghapus data
     public function deleteGuitar(Guitar $guitar){

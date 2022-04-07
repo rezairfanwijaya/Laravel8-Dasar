@@ -12,6 +12,11 @@
 
 <body>
     <div class="container">
+        @if (session()->has('pesanUpdate'))
+            <div class="alert alert-success">
+                {{ session()->get('pesanUpdate') }}
+            </div>
+        @endif
         <h1>{{ $gitar->merk }}</h1>
         <hr>
         <ul>
@@ -29,6 +34,9 @@
             @method('delete')
             <button type="submit" class="btn btn-danger">Hapus</button>
         </form>
+            
+        {{-- edit --}}
+        <a href="{{ route('guitar.edit', ['id' => $gitar->id]) }}" class="btn btn-warning">Edit</a>
     </div>
 </body>
 
