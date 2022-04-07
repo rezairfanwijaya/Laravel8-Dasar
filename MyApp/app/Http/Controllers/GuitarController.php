@@ -144,7 +144,6 @@ class GuitarController extends Controller
 
         // redirect ke halaman detail gitar
         return redirect()->route('guitar.show', $id->id);
-        
     }
     
     // fuctions untuk menghapus data
